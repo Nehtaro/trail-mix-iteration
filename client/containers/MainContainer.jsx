@@ -96,7 +96,7 @@ const MainContainer = () => {
           displayTrail={displayTrail} 
         /><br />
         <ListContainer 
-          trailData={trailData} 
+          trailData={trailData}
           getTrail={getTrail}
           showKey={showKey}
           diffKey={diffKey} 
