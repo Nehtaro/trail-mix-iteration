@@ -7,7 +7,7 @@
  * @description stateful component that renders ListDisplay and TrainContainer
  * ************************************
  */
-import React, { Component } from "react";
+import React from "react";
 import ListDisplay from "../components/ListDisplay.jsx";
 
 //container component that holds the list display of trails
