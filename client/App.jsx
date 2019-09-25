@@ -14,9 +14,6 @@ import MainContainer from "./containers/MainContainer.jsx";
 import Login from "./login/Login.jsx";
 import Signup from "./login/Signup.jsx";
 
-// state includes data retrieved from REI API, selects selected trail
-// holds trail specific comments pulled from database
-
 const App = () => (
   <div>
     <Router>

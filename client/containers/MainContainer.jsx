@@ -12,7 +12,8 @@
 import React, { useState, useEffect } from "react";
 import MapDisplay from "../components/MapDisplay.jsx";
 import ListContainer from "./ListContainer.jsx";
-
+// state includes data retrieved from REI API, selects selected trail
+// holds trail specific comments pulled from database
 //container that combines MapDisplay and ListContainer and passes down all necessary const MainContainer = ( => (
 const MainContainer = () => {
   const [trailData, setTrailData] = useState([]);
