@@ -12,14 +12,14 @@
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
-import reducers from './reducers/index';
-// import { loadMarkets } from './actions/actions';
+import reducers from './reducers/combinedReducers';
+// import { loadMarkets } from './actions/actions'; edit later
 
 const store = createStore(
   reducers,
   composeWithDevTools(applyMiddleware(thunk)),
 );
 
-store.dispatch(loadMarkets());
+// store.dispatch(loadMarkets()); edit later
 
 export default store;
