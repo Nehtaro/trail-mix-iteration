@@ -40,8 +40,11 @@ const MainContainer = (props) => {
     fetch(`/comments?trailid=${id}`)
       .then(res => res.json())
       .then(res => {
-        console.dir(res);
-        setComments(res);
+        console.log("res from fetch",res);
+        res.forEach(i => {
+          console.log("response index", i)
+          setComments(i.comment);
+        })
       })
       .catch(err => console.error(err));
   };

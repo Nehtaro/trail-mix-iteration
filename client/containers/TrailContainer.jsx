@@ -29,6 +29,7 @@ const TrailContainer = (props) => {
         comment,
         username: props.username,
       })
+     
     };
     fetch('/comments', options)
       .then(res => res.json())
@@ -36,7 +37,7 @@ const TrailContainer = (props) => {
         console.log("POST RES", res)
         setComment(res) 
       })
-      .catch(err => console.error(err));
+      .catch(err => console.error('err',err));
   };
   const handleClick = (e) => {
     e.preventDefault();
