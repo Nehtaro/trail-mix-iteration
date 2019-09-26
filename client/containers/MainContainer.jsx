@@ -2,7 +2,7 @@
  * ************************************
  *
  * @module  MainContainer
- * @author  
+ * @author
  * @date
  * @description stateful component that renders MapDisplay and ListContainer
  *
@@ -13,6 +13,7 @@ import React, { useState, useEffect } from "react";
 import MapDisplay from "../components/MapDisplay.jsx";
 import ListContainer from "./ListContainer.jsx";
 import TrailContainer from './TrailContainer.jsx';
+import Header from '../components/Header.jsx';
 
 //container that combines MapDisplay and ListContainer and passes down all necessary props
 const MainContainer = (props) => {
@@ -50,15 +51,16 @@ const MainContainer = (props) => {
   };
   return (
     <div id="main-container">
-      <img src="../../assets/trail-mix-logo-small.jpg" className='logo'/><br />
+      <Header />
       <MapDisplay 
         id="map-display"
         trailData={trailData}
         getTrail={getTrail}
         setSelectedTrail={setSelectedTrail}
       /><br />
-      <ListContainer 
-        trailData={trailData} 
+      <ListContainer
+        setTrailData={setTrailData}
+        trailData={trailData}
         getTrail={getTrail}
         setDiffKey={setDiffKey}
         diffKey={diffKey}
@@ -70,9 +72,9 @@ const MainContainer = (props) => {
         </div>
       )}
       {selectedTrail
-        && <TrailContainer 
-          className="modal" 
-          trailData={trailData} 
+        && <TrailContainer
+          className="modal"
+          trailData={trailData}
           selectedTrail={selectedTrail}
           setSelectedTrail={setSelectedTrail}
           setComments = {setComments}
