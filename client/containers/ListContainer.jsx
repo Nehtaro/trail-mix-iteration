@@ -85,7 +85,7 @@ const ListContainer = (props) => {
       'greenBlue': [],
       'blue': [],
       'blueBlack': [],
-      'black': []
+      'black': [],
     };
 
     props.trailData.forEach(trail => {
