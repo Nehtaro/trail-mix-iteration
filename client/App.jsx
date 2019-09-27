@@ -27,8 +27,10 @@ const App = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        setIsLoggedIn(data.isLoggedIn);
-        if (isLoggedIn) setUsername(data.username);
+        if (data.isLoggedIn) {
+          setUsername(data.username);
+          setIsLoggedIn(true);
+        }
       })
       .catch(err => console.error(err));
   }, []);
