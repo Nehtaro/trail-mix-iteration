@@ -63,9 +63,9 @@ userController.verifyUser = async (req, res, next) => {
       return next(badUserError);
     }
     const isMatch = await bcrypt.compare(password, results.rows[0].password);
-    res.locals.verified = isMatch;
+    console.log(isMatch)
     if (!isMatch) return next(badUserError);
-    res.locals.username = username;
+    res.locals.verified = isMatch;
     res.locals.userId = results.rows[0]._id;
     return next();
   } catch(err) {

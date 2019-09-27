@@ -40,7 +40,7 @@ app.post('/login', userController.verifyUser, sessionController.createSessionsTa
 })
 
 // post request that brings in user-input signup information, creates a new user in the database, and sends verification to the front end
-app.post('/signup', sessionController.isLoggedIn, userController.createTable, userController.createUser, sessionController.createSessionsTable, sessionController.setSSIDCookie, sessionController.startSession, (req, res) => {
+app.post('/signup', userController.createTable, userController.createUser, sessionController.createSessionsTable, sessionController.setSSIDCookie, sessionController.startSession, (req, res) => {
   const { verified } = res.locals;
   return res.status(200).json(verified);
 })
