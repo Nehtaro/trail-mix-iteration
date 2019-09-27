@@ -19,7 +19,6 @@ import Header from '../components/Header.jsx';
 const MainContainer = (props) => {
   const [trailData, setTrailData] = useState([]);
   const [selectedTrail, setSelectedTrail] = useState(null);
-  const [comments, setComments] = useState([]);
   const [diffKey, setDiffKey] = useState(false);
 
   //fetches data from REI API and sets to state when the page loads
@@ -38,16 +37,6 @@ const MainContainer = (props) => {
         break;
       }
     }
-    fetch(`/comments?trailid=${id}`)
-      .then(res => res.json())
-      .then(res => {
-        console.log("res from fetch",res);
-        res.forEach(i => {
-          console.log("response index", i)
-          setComments(i.comment);
-        })
-      })
-      .catch(err => console.error(err));
   };
   return (
     <div id="main-container">
@@ -77,8 +66,6 @@ const MainContainer = (props) => {
           trailData={trailData}
           selectedTrail={selectedTrail}
           setSelectedTrail={setSelectedTrail}
-          setComments = {setComments}
-          comments={comments}
           getTrail={getTrail}
           username={props.username}
         />
